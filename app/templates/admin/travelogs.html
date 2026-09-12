@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container">
+    <h1>游记管理 <a href="/admin/travelog/add" class="btn btn-success" style="float:right;">新增游记</a></h1>
+    <ul class="card-list">
+        {% for travelog in travelogs %}
+        <li class="card">
+            <h3>{{ travelog.title }}</h3>
+            <p>{{ travelog.content }}</p>
+            <div class="scenic-meta">作者：{{ travelog.user.username if travelog.user else '未知' }}</div>
+            <a href="/admin/travelog/{{ travelog.id }}/edit" class="btn">编辑</a>
+            <a href="/admin/travelog/{{ travelog.id }}/delete" class="btn btn-danger">删除</a>
+        </li>
+        {% else %}
+        <li class="card">暂无游记，点击右上角“新增游记”开始添加</li>
+        {% endfor %}
+    </ul>
+</div>
+{% endblock %}

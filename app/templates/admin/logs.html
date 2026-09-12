@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container">
+    <h1>日志管理</h1>
+    {% for log in logs %}
+    <div class="log-entry">
+        {{ log.action }}
+        <span class="scenic-meta">{{ log.user_type }} #{{ log.user_id }}</span>
+        <time>{{ log.created_at }}</time>
+    </div>
+    {% else %}
+    <p>暂无日志</p>
+    {% endfor %}
+</div>
+{% endblock %}

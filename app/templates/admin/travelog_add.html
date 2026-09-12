@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container">
+    <h1>新增游记</h1>
+    <form method="post">
+        <label>标题</label>
+        <input type="text" name="title" required>
+
+        <label>内容</label>
+        <textarea name="content" rows="8" placeholder="请输入游记内容..."></textarea>
+
+        <button type="submit" class="btn">保存</button>
+        <a href="/admin/travelogs" class="btn btn-danger">取消</a>
+    </form>
+</div>
+{% endblock %}

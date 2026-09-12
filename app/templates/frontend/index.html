@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container">
+    <div class="hero">
+        <h1>首页</h1>
+        <p>欢迎来到旅游系统</p>
+    </div>
+
+    <h2>推荐景区</h2>
+    {% if scenics %}
+    <ul class="card-list">
+        {% for s in scenics %}
+        <li class="card">
+            <h3>{{ s.name }}</h3>
+            <p class="scenic-description">{{ s.description }}</p>
+            <div class="scenic-meta">地区：{{ s.region.name if s.region else '未知' }}</div>
+        </li>
+        {% endfor %}
+    </ul>
+    {% else %}
+    <p>暂无推荐景区</p>
+    {% endif %}
+
+    <h2>推荐地区</h2>
+    {% if regions %}
+    <ul class="card-list">
+        {% for r in regions %}
+        <li class="card">
+            <h3>{{ r.name }}</h3>
+            <p>{{ r.description }}</p>
+        </li>
+        {% endfor %}
+    </ul>
+    {% else %}
+    <p>暂无推荐地区</p>
+    {% endif %}
+</div>
+{% endblock %}

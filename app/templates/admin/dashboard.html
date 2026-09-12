@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container">
+    <h1>后台管理</h1>
+    <div class="admin-dashboard">
+        <a href="/admin/members" class="admin-card">
+            <div class="icon">👥</div>
+            <h3>会员管理</h3>
+            <p>查看和管理注册用户</p>
+        </a>
+        <a href="/admin/regions" class="admin-card">
+            <div class="icon">📍</div>
+            <h3>地区管理</h3>
+            <p>维护旅游地区信息</p>
+        </a>
+        <a href="/admin/scenics" class="admin-card">
+            <div class="icon">🏞️</div>
+            <h3>景区管理</h3>
+            <p>管理景区信息</p>
+        </a>
+        <a href="/admin/travelogs" class="admin-card">
+            <div class="icon">📝</div>
+            <h3>游记管理</h3>
+            <p>审核和发布游记</p>
+        </a>
+        <a href="/admin/logs" class="admin-card">
+            <div class="icon">📜</div>
+            <h3>日志管理</h3>
+            <p>查看操作记录</p>
+        </a>
+    </div>
+
+    <form action="/admin/change_password" method="post" style="margin-top:30px;">
+        <button type="submit" class="btn btn-danger">修改密码</button>
+    </form>
+</div>
+{% endblock %}

@@ -1,0 +1,6 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>我的收藏</h1>
+<ul>{% for s in fav_scenics %}<li>{{ s.name }}</li>{% endfor %}</ul>
+{% endblock %}
+

@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container">
+    <h1>新增地区</h1>
+    <form method="post">
+        <label>地区名称</label>
+        <input type="text" name="name" required>
+
+        <label>地区介绍</label>
+        <textarea name="description" rows="4" placeholder="请输入地区介绍..."></textarea>
+
+        <button type="submit" class="btn">保存</button>
+        <a href="/admin/regions" class="btn btn-danger">返回列表</a>
+    </form>
+</div>
+{% endblock %}

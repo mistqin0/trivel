@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container">
+    <h1>新增景区</h1>
+    <form method="post">
+        <label>景区名称</label>
+        <input type="text" name="name" required>
+
+        <label>所属地区</label>
+        <select name="region_id">
+            {% for region in regions %}
+            <option value="{{ region.id }}">{{ region.name }}</option>
+            {% endfor %}
+        </select>
+
+        <label>景区介绍</label>
+        <textarea name="description" rows="5" placeholder="请输入景区介绍..."></textarea>
+
+        <button type="submit" class="btn">保存</button>
+        <a href="/admin/scenics" class="btn btn-danger">返回列表</a>
+    </form>
+</div>
+{% endblock %}

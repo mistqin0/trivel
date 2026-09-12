@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container">
+    <h1>景区管理 <a href="/admin/scenic/add" class="btn btn-success" style="float:right;">新增景区</a></h1>
+    <ul class="card-list">
+        {% for scenic in scenics %}
+        <li class="card">
+            <h3>{{ scenic.name }}</h3>
+            <p>{{ scenic.description }}</p>
+            <div class="scenic-meta">地区：{{ scenic.region.name if scenic.region else '未知' }}</div>
+            <a href="/admin/scenic/{{ scenic.id }}/edit" class="btn">编辑</a>
+            <a href="/admin/scenic/{{ scenic.id }}/delete" class="btn btn-danger">删除</a>
+        </li>
+        {% else %}
+        <li class="card">暂无景区，点击右上角“新增景区”开始添加</li>
+        {% endfor %}
+    </ul>
+</div>
+{% endblock %}

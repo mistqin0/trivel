@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container">
+    <h1>全部景区</h1>
+    {% if scenics %}
+    <ul class="card-list">
+        {% for scenic in scenics %}
+        <li class="card">
+            <h3><a href="/scenic/{{ scenic.id }}">{{ scenic.name }}</a></h3>
+            <p class="scenic-description">{{ scenic.description }}</p>
+            <div class="scenic-meta">地区：{{ scenic.region.name if scenic.region else '未知' }}</div>
+        </li>
+        {% endfor %}
+    </ul>
+    {% else %}
+    <p>暂无景区</p>
+    {% endif %}
+</div>
+{% endblock %}
